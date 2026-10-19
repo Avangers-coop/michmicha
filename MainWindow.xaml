@@ -1,0 +1,248 @@
+﻿<Window x:Class="Evaluation_Sommative_UA1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestion des stages coopératifs"
+        Height="750" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F3F8">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Background="#243B70">
+
+            <TextBlock Text="GestiCoop"
+                       Foreground="White"
+                       FontSize="25"
+                       FontWeight="Bold"
+                       Margin="20,25,10,30"/>
+
+            <Button Content="Tableau de bord"
+                    Height="45"
+                    Margin="10,5"
+                    Background="#243B70"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Offres de stage"
+                    Height="45"
+                    Margin="10,5"
+                    Background="#405C99"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Étudiants"
+                    Height="45"
+                    Margin="10,5"
+                    Background="#243B70"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Candidatures"
+                    Height="45"
+                    Margin="10,5"
+                    Background="#243B70"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Entreprises"
+                    Height="45"
+                    Margin="10,5"
+                    Background="#243B70"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="1"
+                      VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Margin="25">
+
+                <TextBlock Text="Offres de stage"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#243B70"/>
+
+                <TextBlock Text="Publier une nouvelle offre et consulter les offres existantes"
+                           FontSize="14"
+                           Foreground="Gray"
+                           Margin="0,5,0,20"/>
+
+                <Border Background="White"
+                        CornerRadius="10"
+                        Padding="20"
+                        Margin="0,0,0,20">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Nouvelle offre de stage"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,20"/>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="5">
+                                <TextBlock Text="Entreprise *" Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtEntreprise"
+                                         Height="32"
+                                         Padding="5"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="5">
+                                <TextBlock Text="Programme visé *" Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cmbProgramme"
+                                          Height="32"
+                                          SelectedIndex="0">
+                                    <ComboBoxItem Content="Informatique"/>
+                                    <ComboBoxItem Content="Génie logiciel"/>
+                                    <ComboBoxItem Content="Cybersécurité"/>
+                                    <ComboBoxItem Content="Administration"/>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Margin="5">
+                                <TextBlock Text="Type de stage *" Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cmbType"
+                                          Height="32"
+                                          SelectedIndex="0">
+                                    <ComboBoxItem Content="Stage coopératif"/>
+                                    <ComboBoxItem Content="Stage rémunéré"/>
+                                    <ComboBoxItem Content="Stage non rémunéré"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="5">
+                                <TextBlock Text="Titre du poste *" Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtPoste"
+                                         Height="32"
+                                         Padding="5"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="5">
+                                <TextBlock Text="Lieu de travail *" Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtLieu"
+                                         Height="32"
+                                         Padding="5"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Margin="5">
+                                <TextBlock Text="Nombre de postes" Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtNombre"
+                                         Text="1"
+                                         Height="32"
+                                         Padding="5"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="5">
+                                <TextBlock Text="Date de début *" Margin="0,0,0,5"/>
+                                <DatePicker x:Name="dateDebut"
+                                            Height="32"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="5">
+                                <TextBlock Text="Date de fin *" Margin="0,0,0,5"/>
+                                <DatePicker x:Name="dateFin"
+                                            Height="32"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Margin="5">
+                                <TextBlock Text="Statut" Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cmbStatut"
+                                          Height="32"
+                                          SelectedIndex="0">
+                                    <ComboBoxItem Content="Ouvert"/>
+                                    <ComboBoxItem Content="Fermé"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <TextBlock Text="Description du stage *"
+                                   Margin="5,0,0,5"/>
+
+                        <TextBox x:Name="txtDescription"
+                                 Height="100"
+                                 Padding="8"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 Margin="5"/>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,20,5,0">
+
+                            <Button Content="Réinitialiser"
+                                    Width="120"
+                                    Height="38"
+                                    Margin="5"
+                                    Click="Reinitialiser_Click"/>
+
+                            <Button Content="Publier l'offre"
+                                    Width="140"
+                                    Height="38"
+                                    Margin="5"
+                                    Background="#405C99"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="Publier_Click"/>
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White"
+                        CornerRadius="10"
+                        Padding="15">
+
+                    <StackPanel>
+
+                        <TextBlock Text="Liste des offres de stage"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,15"/>
+
+                        <DataGrid x:Name="dgOffres"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True"
+                                  CanUserAddRows="False"
+                                  Height="220">
+
+                          
+
+                        </DataGrid>
+
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
